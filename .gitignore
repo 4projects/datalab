@@ -1,6 +1,6 @@
 *.ipynb_checkpoints
 .DS_Store
-package-lock.json
+sources/web/datalab/package-lock.json
 build
 staging
 *.gradle

@@ -15,7 +15,7 @@
 # We use different base images for GPU vs CPU Dockerfiles, so we expect
 # that the appropriate image is pulled and tagged locally.
 # CPU should use ubuntu:16.04
-# and GPU uses nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
+# and GPU uses nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 FROM datalab-external-base-image
 MAINTAINER Google Cloud DataLab
 
@@ -101,7 +101,7 @@ RUN echo "deb-src http://ftp.us.debian.org/debian testing main" >> /etc/apt/sour
         six==1.11.0 \
         statsmodels==0.6.1 \
         sympy==0.7.6.1 \
-        tensorflow==1.4.0 \
+        tensorflow==1.5.0 \
         tornado==4.4.2 \
         xgboost==0.6a2 && \
 # Install Python2 packages that aren't available or up-to-date in Conda.
@@ -113,6 +113,7 @@ RUN echo "deb-src http://ftp.us.debian.org/debian testing main" >> /etc/apt/sour
         google-cloud-dataflow==2.0.0 \
         lime==0.1.1.23 && \
 # Install Python2 IPython kernel
+
     python -m ipykernel install && \
     source deactivate && \
 # Clean up before setting up the Python3 env.
@@ -155,7 +156,7 @@ RUN echo "deb-src http://ftp.us.debian.org/debian testing main" >> /etc/apt/sour
         six==1.11.0 \
         statsmodels==0.6.1 \
         sympy==0.7.6.1 \
-        tensorflow==1.4.0 \
+        tensorflow==1.5.0 \
         tornado==4.4.2 \
         xgboost==0.6a2 && \
 # Install Python3 packages that aren't available or up-to-date in Conda.
